@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "16.13.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.4",
+    "libraryName": "codebabel",
+    "libraryId": "dfb51384-05e7-4e12-8a34-5e617eb04f83",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "codebabel",
+    "solutionShortDescription": "codebabel description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}
