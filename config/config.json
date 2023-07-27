@@ -9,10 +9,37 @@
           "manifest": "./src/webparts/helloWorld/HelloWorldWebPart.manifest.json"
         }
       ]
+    },
+    "hello-imane-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/helloImane/HelloImaneWebPart.js",
+          "manifest": "./src/webparts/helloImane/HelloImaneWebPart.manifest.json"
+        }
+      ]
+    },
+    "helloworld-2-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/helloworld2/Helloworld2WebPart.js",
+          "manifest": "./src/webparts/helloworld2/Helloworld2WebPart.manifest.json"
+        }
+      ]
+    },
+    "imane-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/imane/ImaneWebPart.js",
+          "manifest": "./src/webparts/imane/ImaneWebPart.manifest.json"
+        }
+      ]
     }
   },
   "externals": {},
   "localizedResources": {
-    "HelloWorldWebPartStrings": "lib/webparts/helloWorld/loc/{locale}.js"
+    "HelloWorldWebPartStrings": "lib/webparts/helloWorld/loc/{locale}.js",
+    "HelloImaneWebPartStrings": "lib/webparts/helloImane/loc/{locale}.js",
+    "Helloworld2WebPartStrings": "lib/webparts/helloworld2/loc/{locale}.js",
+    "ImaneWebPartStrings": "lib/webparts/imane/loc/{locale}.js"
   }
 }
