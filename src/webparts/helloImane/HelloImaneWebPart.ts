@@ -1,7 +1,10 @@
 import { Version } from '@microsoft/sp-core-library';
 import {
   IPropertyPaneConfiguration,
-  PropertyPaneTextField
+  PropertyPaneTextField,
+  PropertyPaneCheckbox,
+  PropertyPaneDropdown,
+  PropertyPaneToggle
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -12,6 +15,11 @@ import * as strings from 'HelloImaneWebPartStrings';
 
 export interface IHelloImaneWebPartProps {
   description: string;
+  test: string;
+  test1: boolean;
+  test2: string;
+  test3:boolean
+
 }
 
 export default class HelloImaneWebPart extends BaseClientSideWebPart<IHelloImaneWebPartProps> {
@@ -27,6 +35,10 @@ export default class HelloImaneWebPart extends BaseClientSideWebPart<IHelloImane
         <h2>Well done, ${escape(this.context.pageContext.user.displayName)}!</h2>
         <div>${this._environmentMessage}</div>
         <div>Web part property value: <strong>${escape(this.properties.description)}</strong></div>
+        <p>${escape(this.properties.test)}</p>
+<p>${this.properties.test1}</p>
+<p>${escape(this.properties.test2)}</p>
+<p>${this.properties.test3}</p>
       </div>
       <div>
         <h3>Welcome to SharePoint Framework!</h3>
@@ -114,14 +126,33 @@ export default class HelloImaneWebPart extends BaseClientSideWebPart<IHelloImane
             {
               groupName: strings.BasicGroupName,
               groupFields: [
-                PropertyPaneTextField('description', {
-                  label: strings.DescriptionFieldLabel
-                })
-              ]
+              PropertyPaneTextField('description', {
+                label: 'Description'
+              }),
+              PropertyPaneTextField('test', {
+                label: 'Multi-line Text Field',
+                multiline: true
+              }),
+              PropertyPaneCheckbox('test1', {
+                text: 'Checkbox'
+              }),
+              PropertyPaneDropdown('test2', {
+                label: 'Dropdown',
+                options: [
+                  { key: '1', text: 'One' },
+                  { key: '2', text: 'Two' },
+                  { key: '3', text: 'Three' },
+                  { key: '4', text: 'Four' }
+                ]}),
+              PropertyPaneToggle('test3', {
+                label: 'Toggle',
+                onText: 'On',
+                offText: 'Off'
+              })
+            ]
             }
           ]
         }
       ]
     };
-  }
-}
+  }}
